@@ -36,7 +36,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: rymndhng/release-on-push-action@master
+      - uses: afeick/github-release-on-push-action@main
         with:
           bump_version_scheme: minor
 ```
@@ -48,7 +48,7 @@ Allowed values of `bump_version_scheme`:
 - patch
 - **norelease**: Performs no release by default. Creation of release delegated to labels on Pull Requests.
 
-For stability, we recommend pinning the version of the action. See [Releases](https://github.com/rymndhng/release-on-push-action/releases).
+For stability, we recommend pinning the version of the action. See [Releases](https://github.com/afeick/github-release-on-push-action/releases).
 
 See [action.yml](./action.yml) for the full list of options.
 
@@ -65,7 +65,7 @@ There are several approaches:
 
 Iif the PR has the label `major`, `minor`, or `patch`, this will override `bump_version_scheme`. 
 
-This repository's pull requests are an example of this in action. For example, [#19](https://github.com/rymndhng/release-on-push-action/pull/19).
+This repository's pull requests are an example of this in action. For example, [#19](https://github.com/afeick/github-release-on-push-action/pull/19).
 
 Only one of these labels should be present on a PR. If there are multiple, the behavior is undefined.
 
@@ -109,7 +109,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - id: release
-        uses: rymndhng/release-on-push-action@master
+        uses: afeick/github-release-on-push-action@main
         with:
           bump_version_scheme: minor
           tag_prefix: v
@@ -139,7 +139,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: rymndhng/release-on-push-action@master
+      - uses: afeick/github-release-on-push-action@main
         with:
           bump_version_scheme: minor
           release_body: "When set, adds extra text to body!"
@@ -167,7 +167,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: rymndhng/release-on-push-action@master
+      - uses: afeick/github-release-on-push-action@main
         with:
           bump_version_scheme: minor
           use_github_release_notes: true
@@ -191,7 +191,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: rymndhng/release-on-push-action@master
+      - uses: afeick/github-release-on-push-action@main
         with:
           tag_prefix: ""
 ```
@@ -217,7 +217,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: rymndhng/release-on-push-action@master
+      - uses: afeick/github-release-on-push-action@main
         with:
           tag_prefix: "v"
           release_name: "Release <RELEASE_VERSION>"
@@ -239,7 +239,7 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
-      - uses: rymndhng/release-on-push-action@master
+      - uses: afeick/github-release-on-push-action@main
         with:
           max_commits: 100
 ```
@@ -256,7 +256,7 @@ To run tests:
 
 ``` sh
 export GITHUB_TOKEN=<YOUR_TOKEN>
-export GITHUB_REPOSITORY=rymndhng/release-on-push-action
+export GITHUB_REPOSITORY=afeick/github-release-on-push-action
 export GITHUB_SHA=167c690247d0933acde636d72352bcd67e33724b
 export GITHUB_API_URL=https://api.github.com
 export INPUT_BUMP_VERSION_SCHEME=minor

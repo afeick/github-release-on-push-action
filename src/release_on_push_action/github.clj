@@ -111,7 +111,7 @@
 
 (comment
   ;; used for testing
-  (def context {:repo "rymndhng/release-on-push-action"
+  (def context {:repo "afeick/github-release-on-push-action"
                 :github/api-url "https://api.github.com"
                 :sha "167c690247d0933acde636d72352bcd67e33724b"})
 
