@@ -67,9 +67,9 @@
 (defn bump-version-scheme [context related-data]
   (let [labels (get-labels (:related-prs related-data))]
     (cond
-      (contains? labels "release:major") :major
-      (contains? labels "release:minor") :minor
-      (contains? labels "release:patch") :patch
+      (contains? labels "major") :major
+      (contains? labels "minor") :minor
+      (contains? labels "patch") :patch
       :else (keyword (:bump-version-scheme context)))))
 
 (defn get-tagged-version [latest-release]
@@ -93,11 +93,8 @@
     (= :norelease (bump-version-scheme context related-data))
     "Skipping release, no version bump found."
 
-    (str/includes? (github/commit-title (:commit related-data)) "[norelease]")
-    "Skipping release. Reason: git commit title contains [norelease]"
-
-    (contains? (get-labels (get-in related-data [:related-prs])) "norelease")
-    "Skipping release. Reason: related PR has label norelease"))
+    (contains? (get-labels (get-in related-data [:related-prs])) "no version")
+    "Skipping release. Reason: related PR has label 'no version'"))
 
 (defn generate-new-release-data [context related-data]
   (let [bump-version-scheme (bump-version-scheme context related-data)

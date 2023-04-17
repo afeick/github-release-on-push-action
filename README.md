@@ -58,13 +58,12 @@ See [action.yml](./action.yml) for the full list of options.
 
 There are several approaches:
 
-1. Put `[norelease]` in the commit title.
-2. If the commit has an attached PR, add the label `norelease` to the PR.
-3. Set the action's `bump_version_scheme` to `norelease` to disable this behavior by default
+1. If the commit has an attached PR, add the label `no version` to the PR.
+2. Set the action's `bump_version_scheme` to `norelease` to disable this behavior by default
 
 ### How do I change the bump version scheme using Pull Requests?
 
-Iif the PR has the label `release:major`, `release:minor`, or `release:patch`, this will override `bump_version_scheme`. 
+Iif the PR has the label `major`, `minor`, or `patch`, this will override `bump_version_scheme`. 
 
 This repository's pull requests are an example of this in action. For example, [#19](https://github.com/rymndhng/release-on-push-action/pull/19).
 
