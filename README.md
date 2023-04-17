@@ -6,7 +6,7 @@ Github Action to create a Github Release on pushes to master.
 
 ## Features
 
-- Flexible version bumping scheme with a project default or overrides using Pull Request Labels
+- Flexible version bumping scheme using Pull Request Labels
 - Creates Release Notes automatically (with a list of commits since the last release)
 
 ## Rationale
